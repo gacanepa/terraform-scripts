@@ -15,9 +15,9 @@ resource "google_sql_database_instance" "mysql-canepa-development-db" {
 
 # MySQL user
 resource "google_sql_user" "mysql-development-user" {
-  name     = "${var.sql_user}"
+  name     = var.sql_user
   instance = google_sql_database_instance.mysql-canepa-development-db.name
-  password = "${var.sql_password}"
+  password = var.sql_password
 }
 
 # PostgreSQL 13 database instance
@@ -32,9 +32,9 @@ resource "google_sql_database_instance" "postgres-canepa-development-db" {
 
 # User
 resource "google_sql_user" "postgres-development-user" {
-  name     = "${var.sql_user}"
+  name     = var.sql_user
   instance = google_sql_database_instance.postgres-canepa-development-db.name
-  password = "${var.sql_password}"
+  password = var.sql_password
 }
 # END OF DEVELOPMENT ENV
 
@@ -51,9 +51,9 @@ resource "google_sql_database_instance" "mysql-canepa-integrationtest-db" {
 
 # MySQL user
 resource "google_sql_user" "mysql-integrationtest-user" {
-  name     = "${var.sql_user}"
+  name     = var.sql_user
   instance = google_sql_database_instance.mysql-canepa-integrationtest-db.name
-  password = "${var.sql_password}"
+  password = var.sql_password
 }
 
 # PostgreSQL 13 database instance
@@ -68,9 +68,9 @@ resource "google_sql_database_instance" "postgres-canepa-integrationtest-db" {
 
 # User
 resource "google_sql_user" "postgres-integrationtest-user" {
-  name     = "${var.sql_user}"
+  name     = var.sql_user
   instance = google_sql_database_instance.postgres-canepa-integrationtest-db.name
-  password = "${var.sql_password}"
+  password = var.sql_password
 }
 # END OF TESTING ENV
 
@@ -87,9 +87,9 @@ resource "google_sql_database_instance" "mysql-canepa-qa-db" {
 
 # MySQL user
 resource "google_sql_user" "mysql-qa-user" {
-  name     = "${var.sql_user}"
+  name     = var.sql_user
   instance = google_sql_database_instance.mysql-canepa-qa-db.name
-  password = "${var.sql_password}"
+  password = var.sql_password
 }
 
 # PostgreSQL 13 database instance
@@ -104,8 +104,8 @@ resource "google_sql_database_instance" "postgres-canepa-qa-db" {
 
 # User
 resource "google_sql_user" "postgres-qa-user" {
-  name     = "${var.sql_user}"
+  name     = var.sql_user
   instance = google_sql_database_instance.postgres-canepa-qa-db.name
-  password = "${var.sql_password}"
+  password = var.sql_password
 }
 # END OF QA ENV
